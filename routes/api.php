@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/test/create', function (Request $request) {
-    $arifpay = new Arifpay('HrUDdrOv3TV92cgpzpbQ3DakLJtHfYfh');
+    $arifpay = new Arifpay('your-api-key');
     $d = new  Carbon();
     $d->setMonth(10);
     $expired = ArifpaySupport::getExpireDateFromDate($d);
@@ -55,11 +55,11 @@ Route::get('/test/create', function (Request $request) {
     );
     $session =  $arifpay->checkout()->create($data, new ArifpayOptions(sandbox: true));
 
-    return $session->session_id;
+    return $session->payment_url;
 });
 
 Route::get('/test/fetch', function (Request $request) {
-    $arifpay = new Arifpay('HrUDdrOv3TV92cgpzpbQ3DakLJtHfYfh');
+    $arifpay = new Arifpay('your-api-key');
 
     $session =  $arifpay->checkout()->fetch("5ce47648-8904-44f3-b250-7d0ae61e12e5", new ArifpayOptions(sandbox: true));
 

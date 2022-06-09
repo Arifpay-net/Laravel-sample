@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
-        "arifpay/arifpay": "dev-main",
+        "arifpay/arifpay": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.11",
         "laravel/sanctum": "^2.14.1",
@@ -47,12 +47,7 @@
             "@php artisan key:generate --ansi"
         ]
     },
-    "repositories": [
-        {
-          "type": "path",
-          "url": "../laravel"
-        }
-      ],
+
     "extra": {
         "laravel": {
             "dont-discover": []
