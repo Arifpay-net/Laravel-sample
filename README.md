@@ -48,7 +48,7 @@ php artisan serve
 
 ```
 
-We have provided the test collection in postman. you can try it` now.
+We have provided the test collection in postman. you can [Try it now](https://documenter.getpostman.com/view/11254016/Uz5MGZbf).
 
 The `create` route will create a test session and returns a `session id` and a `payment url`. you can then pass this id to `fetch` route and you will get the session object you created. you can also check out go to the `payment url` with browser of your choice and you will get the checkout page.
 
