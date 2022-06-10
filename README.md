@@ -33,7 +33,7 @@ Route::get('/test/create', function (Request $request) {
 
 // and
 
-Route::get('/test/fetch', function (Request $request) {
+Route::get('/test/fetch/:id', function (Request $request) {
     $arifpay = new Arifpay('your-api-key');
  ...
 });
