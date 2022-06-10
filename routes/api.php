@@ -55,13 +55,13 @@ Route::get('/test/create', function (Request $request) {
     );
     $session =  $arifpay->checkout()->create($data, new ArifpayOptions(sandbox: true));
 
-    return $session->payment_url;
+    return ["url" => $session->payment_url, "id" => $session->session_id];
 });
 
-Route::get('/test/fetch', function (Request $request) {
+Route::get('/test/fetch/:id', function (Request $request, $id) {
     $arifpay = new Arifpay('your-api-key');
 
-    $session =  $arifpay->checkout()->fetch("5ce47648-8904-44f3-b250-7d0ae61e12e5", new ArifpayOptions(sandbox: true));
+    $session =  $arifpay->checkout()->fetch($id, new ArifpayOptions(sandbox: true));
 
     return $session->id;
 });
