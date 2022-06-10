@@ -58,7 +58,7 @@ Route::get('/test/create', function (Request $request) {
     return ["url" => $session->payment_url, "id" => $session->session_id];
 });
 
-Route::get('/test/fetch/:id', function (Request $request, $id) {
+Route::get('/test/fetch/{id}', function (Request $request, $id) {
     $arifpay = new Arifpay('your-api-key');
 
     $session =  $arifpay->checkout()->fetch($id, new ArifpayOptions(sandbox: true));
